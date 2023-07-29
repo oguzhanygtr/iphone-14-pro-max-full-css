@@ -1,0 +1,326 @@
+:root {
+  --primary: #f6e0c9;
+  --secondary: #a08b65;
+
+  --border: #4a4153;
+  --white: #fff;
+  --black: #000;
+  --antenna: #766e80;
+  --button: #201e1e;
+  --logo: #2f2b39;
+  --back-panel--start: #3c3642;
+  --back-panel--end: #93859a;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  min-width: 650px;
+  overflow: auto;
+}
+.mobile {
+  position: relative;
+  aspect-ratio: 9/19.5;
+  width: 300px;
+  border-radius: 45px;
+  box-shadow: inset 0 0 0 8px var(--black), 0px 0px 0px 1px #c3c0c0,
+    0px 0px 0px 2px #a9a3a4, 0px 0px 0px 3px #dcdcdc;
+  border: 2px solid var(--border);
+}
+.back {
+  box-shadow: 0px 0px 0px 1px #c3c0c0,
+    0px 0px 0px 2px #a9a3a4, 0px 0px 0px 3px #dcdcdc;
+  background: linear-gradient(
+    45deg,
+    var(--back-panel--start),
+    var(--back-panel--end)
+  );
+}
+.dynamic-island {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 20px;
+  top: 15px;
+  left: 50%;
+  transform: translatex(-50%);
+  background: var(--black);
+  border-radius: 10px;
+}
+
+.dynamic-island .front-camera {
+  position: absolute;
+  right: 8px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  background: #111;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+  box-shadow: inset 13px 0px 2px -11px rgb(164, 164, 164, 0.2),
+    inset -13px 0px 2px -10px rgb(86, 115, 149, 0.3);
+}
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("https://wallpaperaccess.com/full/6988025.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 45px;
+}
+
+.top-band,
+.bottom-band {
+  position: absolute;
+  width: 304px;
+  height: 5px;
+  left: -4px;
+  border-left: 2px solid var(--antenna);
+  border-right: 3px solid var(--antenna);
+}
+.top-band {
+  top: 60px;
+}
+.bottom-band {
+  bottom: 60px;
+}
+.antenna-bands::before,
+.antenna-bands::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 4px;
+  background: var(--antenna);
+}
+.antenna-bands::before {
+  top: -4px;
+  right: 60px;
+}
+.antenna-bands::after {
+  bottom: -4px;
+  left: 60px;
+}
+.back .antenna-bands::before {
+  left: 60px;
+}
+.back .antenna-bands::after {
+  left: initial;
+  right: 60px;
+}
+.left-buttons * {
+  position: absolute;
+  width: 4px;
+  border-radius: 2px 0 0 2px;
+  background: linear-gradient(0, #564c5d, #4c4652);
+  box-shadow: inset 1px 3px 3px -2px #9d8e78, inset 1px -3px 2px -2px #9d8e78,
+    -1px 0px 0px #b3aeb7;
+  left: -8px;
+}
+.right-buttons * {
+  right: -8px;
+  position: absolute;
+  width: 4px;
+  border-radius: 0 2px 2px 0px;
+  background: linear-gradient(0, #564c5d, #4c4652);
+  box-shadow: inset 1px 3px 3px -2px #9d8e78, inset 1px -3px 2px -2px #9d8e78;
+}
+.slider {
+  height: 20px;
+  top: 100px;
+}
+.volume-up {
+  top: 140px;
+  height: 50px;
+}
+.volume-down {
+  top: 200px;
+  height: 50px;
+}
+.side-button {
+  top: 150px;
+  height: 70px;
+}
+
+.background {
+  z-index: -1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url("https://9to5mac.com/wp-content/uploads/sites/6/2022/09/iPhone-14-Pro-wallpaper-1.jpeg");
+  background-size: contain;
+  border-radius: 45px;
+}
+.camera-section {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(45deg, #323041, #4a4559);
+  top: 15px;
+  left: 15px;
+  border-radius: 30px;
+  box-shadow: -1px 1px 2px 2px #242030, 0px 0px 4px 5px #a597aa;
+}
+.camera-ring {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #3e3448, #a094b1);
+  box-shadow: 0px 0px 1px 1px #978a9d;
+}
+.wide-ring {
+  top: initial;
+  bottom: 5px;
+}
+.ultra-wide-ring {
+  top: 50%;
+  left: initial;
+  right: 5px;
+  transform: translatey(-50%);
+}
+.telephoto,
+.wide,
+.ultra-wide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 45px;
+  background: var(--black);
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 2px #2a2b2f;
+}
+.telephoto::before,
+.wide::before,
+.ultra-wide::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #181a1f;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.telephoto::after,
+.wide::after,
+.ultra-wide::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: inset 13px 0px 3px -11px rgb(133 134 133 / 90%),
+    inset -13px 0px 5px -12px rgb(69 98 129 / 90%);
+}
+.wide::before {
+  width: 25px;
+  height: 25px;
+}
+.wide::after {
+  height: 15px;
+  width: 15px;
+}
+.ultra-wide::before {
+  width: 35px;
+  height: 35px;
+}
+.ultra-wide::after {
+  height: 15px;
+  width: 15px;
+  box-shadow: inset 12px 0px 9px -11px rgb(133 134 133 / 90%),
+    inset -14px 0px 7px -12px rgb(69 98 129 / 90%);
+}
+.inner-sensor {
+  z-index: 1;
+  position: absolute;
+  border: 1px solid #222324;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 2px 0px 2px -2px #8693a2, inset -2px 0 2px -2px #323a44;
+}
+.flash {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 24px;
+  top: 10px;
+  background: #ebe0d3;
+  border-radius: 50%;
+  border: 2px solid #b4abb8;
+  box-shadow: inset -10px 0px 5px -4px rgba(250, 238, 225, 0.8),
+    inset 10px 0px 5px -4px rgba(250, 238, 225, 0.8),
+    inset 0px 10px 4px 4px #e0d4c6;
+}
+.lidar-scanner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 25px;
+  bottom: 10px;
+  background: linear-gradient(135deg, #1c1a1b, #272526);
+  border-radius: 50%;
+}
+.noise-cancellation {
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
+  border: 1px solid #b4abb8;
+  width: 3px;
+  height: 3px;
+  background: var(--black);
+  border-radius: 50%;
+}
+i.fa-apple {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  color: var(--logo);
+}
+.logo {
+  position: absolute;
+  height: 66.86px;
+  width: 90.2041px;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background: var(--logo);
+  border-radius: 35% 35% 41% 41% / 42% 42% 75% 75%;
+}
+.logo::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  width: 17.55px;
+  height: 20px;
+  background: var(--logo);
+  border-radius: 100% 0;
+}
+.logo::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: ;
+}
